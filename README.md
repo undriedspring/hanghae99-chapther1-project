@@ -7,7 +7,7 @@
 ## 와이어 프레임
 
 카카오 오븐 url :
-https://ovenapp.io/view/uOkYjqzUpKGSkqlaXpueFKzboCJihrJa/IizVu
+https://ovenapp.io/view/LOQUfroHiJEaz5RXfAEHMp6d4e6ectIb/
 
 <hr>
 
