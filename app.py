@@ -24,9 +24,9 @@ def singUp():
     return render_template('singUp.html')
 
 # myPage
-@app.route('/myPage')
+@app.route('/mypage')
 def myPage():
-    return render_template('myPage.html')
+    return render_template('mypage.html')
 
 
 if __name__ == '__main__':
