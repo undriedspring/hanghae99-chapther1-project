@@ -1,0 +1,40 @@
+body {
+    background-color: white;
+    min-height: 100vh;
+}
+
+.section {
+    padding: 1rem 1.5rem;
+    max-width: 750px;
+    margin: auto;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 5rem;
+    font-family: 'Black And White Picture', sans-serif;
+}
+
+.subtitle {
+    font-size: 2rem;
+    font-family: 'Dokdo', cursive;
+}
+
+.is-sparta {
+    color: coral !important;
+}
+.button.is-sparta {
+    background-color: coral;
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.button.is-sparta.is-outlined {
+    background-color: transparent;
+    border-color: coral;
+    color: coral !important;
+}
+
+.help {
+    color: gray;
+}
