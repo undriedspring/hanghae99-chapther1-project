@@ -34,7 +34,6 @@ def main_list():
 
 
 
-    
 
 # singUp
 @app.route('/singUp')
