@@ -5,21 +5,12 @@ body {
 
 .section {
     padding: 1rem 1.5rem;
-<<<<<<< HEAD
     max-width: 750px;
     margin: auto;
-=======
-    /*max-width: 750px;*/
-    /*margin: auto;*/
->>>>>>> f914cfa5f1d36d86da0fd2aebc091abc1a101143
     align-items: center;
     display: flex;
     flex-grow: 1;
     width: 100%;
-<<<<<<< HEAD
-=======
-
->>>>>>> f914cfa5f1d36d86da0fd2aebc091abc1a101143
 }
 
 .title {
@@ -51,12 +42,6 @@ body {
 
 .help {
     color: gray;
-}
-.media-content h3{
-    text-align: center;
-    font-family: 'Gugi', cursive;
-    font-weight: bold;
-    font-size: 30px;
 }
 
 .media-content h3{
