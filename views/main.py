@@ -29,4 +29,5 @@ def home():
 @main.route('/main_list', methods=['GET'])
 def main_list():
     main_list = list(db.forTheCulture.find({}, {'_id': False}))
+
     return jsonify({'main_list': main_list})
