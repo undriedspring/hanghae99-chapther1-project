@@ -23,6 +23,7 @@ body {
 .is-sparta {
     color: coral !important;
 }
+
 .button.is-sparta {
     background-color: coral;
     border-color: transparent;
@@ -38,3 +39,5 @@ body {
 .help {
     color: gray;
 }
+
+

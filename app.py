@@ -8,9 +8,6 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-
-
-app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config['UPLOAD_FOLDER'] = "../static/profile_pics"
 
@@ -33,8 +30,6 @@ def main_list():
     return jsonify({'main_list': main_list})
 
 
-
-
 # singUp
 @app.route('/singUp')
 def singUp():
@@ -45,6 +40,7 @@ def singUp():
 @app.route('/mypage')
 def myPage():
     return render_template('mypage.html')
+
 
 @app.route('/')
 def home():
@@ -65,7 +61,6 @@ def login():
     return render_template('login.html', msg=msg)
 
 
-
 @app.route('/sign_in', methods=['POST'])
 def sign_in():
     # 로그인
@@ -77,10 +72,10 @@ def sign_in():
 
     if result is not None:
         payload = {
-         'id': username_receive,
-         'exp': datetime.utcnow() + timedelta(seconds=60 * 60 * 24)  # 로그인 24시간 유지
+            'id': username_receive,
+            'exp': datetime.utcnow() + timedelta(seconds=60 * 60 * 24)  # 로그인 24시간 유지
         }
-        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
+        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
         return jsonify({'result': 'success', 'token': token})
     # 찾지 못하면
@@ -94,9 +89,8 @@ def sign_up():
     password_receive = request.form['password_give']
     password_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
     doc = {
-        "username": username_receive,                               # 아이디
-        "password": password_hash,                                  # 비밀번호
-
+        "username": username_receive,  # 아이디
+        "password": password_hash,  # 비밀번호
     }
     db.users.insert_one(doc)
     return jsonify({'result': 'success'})
@@ -110,4 +104,4 @@ def check_dup():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    app.run('0.0.0.0', port=5001, debug=True)
