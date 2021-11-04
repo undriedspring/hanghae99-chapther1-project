@@ -98,15 +98,15 @@
         window.addEventListener('DOMContentLoaded', function () {
             if (document.cookie.includes('mytoken')) {
                 let temp_html = `
-                        <button type="button" class="btn btn-link"><a href="{{ url_for('myPage') }}">마이 페이지</a></button>
+                        <button type="button" class="btn btn-link"><a href="{{ url_for('mypage.myPage') }}">마이 페이지</a></button>
                         <button type="button" class="btn btn-outline-secondary" onclick=delCookie()>로그아웃</button>
                         `
                 $('#media-flex').append(temp_html)
             } else {
                 let temp_html = `
-                        <button type="button" class="btn btn-outline-secondary"><a href="{{ url_for('login') }}">로그인</a>
+                        <button type="button" class="btn btn-outline-secondary"><a href="{{ url_for('login.login') }}">로그인</a>
                         </button>
-                        <button type="button" class="btn btn-primary"><a href="{{ url_for('singUp') }}">회원가입</a>
+                        <button type="button" class="btn btn-primary"><a href="{{ url_for('signup.signUp') }}">회원가입</a>
                         </button>
 
             `
@@ -135,7 +135,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url_for('index') }}">문화로</a>
+                <a class="navbar-brand" href="{{ url_for('main.home') }}">문화로</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -144,10 +144,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <form id="media-flex" class="d-flex">
-                        {#                        <button type="button" class="btn btn-link"><a href="{{ url_for('myPage') }}">마이 페이지</a></button>#}
-                        {#                        <button type="button" class="btn btn-outline-secondary"><a href="{{ url_for('login') }}">로그인</a>#}
+                        {#                        <button type="button" class="btn btn-link"><a href="{{ url_for('mypage.myPage') }}">마이 페이지</a></button>#}
+                        {#                        <button type="button" class="btn btn-outline-secondary"><a href="{{ url_for('login.login') }}">로그인</a>#}
                         {#                        </button>#}
-                        {#                        <button type="button" class="btn btn-primary"><a href="{{ url_for('singUp') }}">회원가입</a>#}
+                        {#                        <button type="button" class="btn btn-primary"><a href="{{ url_for('signup.signUp') }}">회원가입</a>#}
                         {#                        </button>#}
                     </form>
                 </div>
