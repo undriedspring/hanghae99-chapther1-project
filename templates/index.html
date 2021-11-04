@@ -13,31 +13,83 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
     <!-- Flask Extends-->
-{#    <link rel="stylesheet" href="{{ url_for('static', filename='') }}">#}
+    {#    <link rel="stylesheet" href="{{ url_for('static', filename='') }}">#}
     <!-- favicon -->
-    <link rel="icon" href=""/>
+    <link rel="icon" href="./static/favicon.ico"/>
     <!--     Optional JavaScript -->
     <!--     jQuery first, then Popper.js, then Bootstrap JS -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"-->
     <!--            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"-->
     <!--            crossorigin="anonymous"></script>-->
     <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"-->
     <!--            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"-->
     <!--            crossorigin="anonymous"></script>-->
+    <style>
+        #content{
+            background-color: #fbfbfb;
+            margin-top: 24px;
+        }
+        .card{
 
+            cursor: pointer;
+            {#overflow: hidden;#}
+            box-shadow: 0 0 20px rgb(0 0 0 / 16%);
+        }
+        .card-img{
+              {#background-color: black;#}
+            overflow: hidden;
+            {#height: 320px;#}
+
+        }
+        .card:hover{
+            box-shadow: 0 0 20px rgb(0 0 0 / 16%);
+        }
+        .card:hover img{
+            {#opacity: 0.7;#}
+            transition-duration: 0.5s;
+            transform: scale(1.1);
+        }
+        .card:hover .card-body{
+            background-color: #eeeeee;
+        }
+    </style>
     <title>문화로</title>
     <script>
         $(document).ready(function () {
             mainlist();
         });
+
         function mainlist() {
             $.ajax({
                 type: "GET",
                 url: "/main_list",
                 data: {},
                 success: function (response) {
-                    console.log(response)
+                    {#console.log(response)#}
+                    let list = response['main_list']
+                    {#console.log(list)#}
+                    {#console.log(list.length)#}
+                    for (let i = 0; i < list.length; i++) {
+                        let id = list[i]['id']
+                        let title = list[i]['title']
+                        let desc = list[i]['desc']
+                        {#console.log(id, title, desc)#}
+                        let temp_html = `
+                            <div class="col" >
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="static/${id}.jpg" class="card-img-top" alt="=이미지 샘플2" /
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">${title}</h5>
+                                    </div>
+
+                                </div>
+                            </div>
+                        `
+                        $('#list').append(temp_html)
+                    }
                 }
             })
         }
@@ -50,80 +102,13 @@
 {% block content %}
     <div id="content">
         <div class="container">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card">
-
-                        <img src="#" class="card-img-top" alt="이미지 샘플1">
-
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to
-                                additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="#" class="card-img-top" alt="=이미지 샘플2">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to
-                                additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="#" class="card-img-top" alt="=이미지 샘플3">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to
-                                additional content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="#" class="card-img-top" alt="=이미지 샘플4">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to
-                                additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="#" class="card-img-top" alt="=이미지 샘플5">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to
-                                additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="#" class="card-img-top" alt="=이미지 샘플6">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to
-                                additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
+            <div id="list" class="row row-cols-1 row-cols-md-4 g-4">
 
             </div>
         </div>
 
     </div>
+
 {% endblock %}
 </body>
 </html>
