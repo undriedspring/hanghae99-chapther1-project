@@ -38,7 +38,6 @@
         function sign_in() {
             let username = $("#input-username").val()
             let password = $("#input-password").val()
-
             if (username == "") {
                 $("#help-id-login").text("아이디를 입력해주세요.")
                 $("#input-username").focus()
@@ -216,7 +215,7 @@
 
 </head>
 <body>
-{% extends 'header.html' %}
+{% extends 'layout.html' %}
 
 {% block content %}
     <section class="hero is-white">
@@ -228,6 +227,7 @@
             <div class="box" style="max-width: 480px;margin:auto">
                 <article class="media">
                     <div class="media-content">
+                        <h3>Login</h3>
                         <div class="content">
                             <div class="field has-addons">
                                 <div class="control has-icons-left" style="width:100%">

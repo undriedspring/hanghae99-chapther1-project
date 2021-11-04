@@ -23,10 +23,8 @@ def sign_in():
     # 로그인
     username_receive = request.form['username_give']
     password_receive = request.form['password_give']
-
     pw_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
-    result = db.users.find_one({'username': username_receive, 'password': pw_hash})
-
+    result = db.forTheCultureUsers.find_one({'userId': username_receive, 'userPw': pw_hash})
     if result is not None:
         payload = {
             'id': username_receive,

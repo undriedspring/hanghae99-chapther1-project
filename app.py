@@ -5,6 +5,7 @@ from views.main import main
 from views.signup import signup
 from views.login import log_in
 from views.mypage import my_page
+from views.detail import detail
 app = Flask(__name__)
 # import main
 app.register_blueprint(main)
@@ -14,6 +15,8 @@ app.register_blueprint(signup)
 app.register_blueprint(log_in)
 # import mypage
 app.register_blueprint(my_page)
+# import detail
+app.register_blueprint(detail)
 
 # modify later
 app.config["TEMPLATES_AUTO_RELOAD"] = True
