@@ -1,0 +1,27 @@
+        .card.mb-3 {
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: rgb(242, 242, 242);
+            width: 500px;
+        }
+        .header--text {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .card--wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        table {
+            width: 100%;
+        }
+        table tr td {
+            display: block;
+            margin-top: 10px;
+            border-top: 1px dashed #B2B2B2;
+        }
+        .card-text {
+            margin-top: 10px;
+        }

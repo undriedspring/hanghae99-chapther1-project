@@ -5,28 +5,7 @@
     <title>mypage</title>
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
-        .card.mb-3{
-            margin-top: 20px;
-            box-shadow: rgb(0 0 0 / 23%) 3px 3px 8px 0px ;
-            border-radius: 10px;
-            background-color: rgba(250, 250, 250);
-        }
-        .header--text{
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-        /*.img-fluid.rounded-start{*/
-        /*    height: 100%;*/
-        /*}*/
-        .card-body{
-            display: grid;
-            grid-template-rows: repeat(2, 50px);
-            grid-template-columns: repeat(2, 100px);
-            grid-auto-rows: 100px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/styles/mypage.css">
 </head>
 <body>
 {% extends 'layout.html'%}
@@ -34,28 +13,38 @@
 {% block content %}
 <div class="container">
     <div class="header--text">
-        <h4>내가 작성한 리뷰</h4>
-        <h4>ID : {{user.userId}}</h4>
+        <h4>리뷰</h4>
+        <hr />
+        <h4>{{user}}</h4>
     </div>
 
     {% for review in reviews %}
+    <div class="card--wrapper">
         <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="../static/{{review.postId}}.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <p>ID</p>
-                <p>내용</p>
-              </div>
-                <div class="card-body">
-                    <p class="card-text">{{review.userId}}</p>
-                    <p class="card-text">{{review.text}}</p>
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <a href="/details?id={{review.postId}}">
+                        <img src="../static/{{review.postId}}.jpg" class="img-fluid rounded-start" alt="{{review.postId}}">
+                    </a>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <th id="title">
+                                    <!--인덱싱-->
+                                    {{result[loop.index0]}}
+                                </th>
+                            </tr>
+                            <tr>
+                                <td><p class="card-text">{{review.text}}</p></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
+    </div>
     {% endfor %}
 
 

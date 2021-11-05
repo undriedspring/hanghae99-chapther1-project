@@ -20,7 +20,11 @@
             const user = '{{user}}'
             const post = '{{detail.id}}'
             const text = $('#input-text').val()
-            $.ajax({
+            if(text.trim() === ''){
+                alert('내용을 작성해주세요!')
+                window.location.reload()
+            }else{
+                $.ajax({
                 type: 'post',
                 url: '/api/review',
                 data: {post_id: post, user_id: user, text_give: text},
@@ -30,8 +34,21 @@
                         window.location.reload()
                     }
                 }
-            })
+                })
+            }
+
         }
+        window.addEventListener('DOMContentLoaded', function (){
+            const back = document.querySelector('#backimg')
+            back.style.backgroundImage = `url('../static/{{detail.id}}_wide.jpg')`
+            back.style.position = 'absolute'
+            back.style.top='-10%'
+            back.style.left='-10%'
+            back.style.width='120%'
+            back.style.height='110%'
+            back.style.filter = 'blur(15px);'
+            back.style.backgroundSize = 'cover'
+        })
     </script>
 </head>
 
@@ -39,98 +56,96 @@
 <body>
 {% extends "layout.html" %}
 {% block content %}
-    <section class="header-image">
-        <div class="css-cshjoi-PosterContainer e1svyhwg1">
-            <div class="css-BlurPosterBlock e1svyhwg2">
-                <div color="#B8B8B8" class="css-LeftBackground e1svyhwg6"></div>
-                <div class="css-BlurPoster e1svyhwg4">
-                    <div color="#B8B8B8" class="css-LeftGradient"></div>
-                    <div color="#D7AD7C" class="css-RightGradient e1svyhwg9"></div>
-                </div>
-                <div color="#D7AD7C" class="css-RightBackground e1svyhwg7"></div>
-                <div class="css-DimmedLayer e1svyhwg3" id="bgImg"></div>
+<section class="header-image">
+    <div class="css-cshjoi-PosterContainer e1svyhwg1">
+        <div class="css-BlurPosterBlock e1svyhwg2">
+            <div color="#B8B8B8" class="css-LeftBackground e1svyhwg6"></div>
+            <div class="css-BlurPoster e1svyhwg4" id="backimg">
+                <div color="#B8B8B8" class="css-LeftGradient"></div>
+                <div color="#D7AD7C" class="css-RightGradient e1svyhwg9"></div>
             </div>
-            <div class="css-569z5v">
-                <div class="css-1po9d5k">
-                    <div class="css-1d6udxb">
-                        <div class="css-PosterWithRankingInfoBlock e1svyhwg10">
-                            <div class=" css-StyledLazyLoadingImage ezcopuc0">
-                                <img class=" css-StyledLazyLoadingImage ezcopuc0"
-                                     src="../static/{{detail.id}}.jpg">
-                            </div>
-                            <br><br><br><br>
+            <div color="#D7AD7C" class="css-RightBackground e1svyhwg7"></div>
+            <div class="css-DimmedLayer e1svyhwg3"></div>
+        </div>
+        <div class="css-569z5v">
+            <div class="css-1po9d5k">
+                <div class="css-1d6udxb">
+                    <div class="css-PosterWithRankingInfoBlock e1svyhwg10">
+                        <div class=" css-StyledLazyLoadingImage ezcopuc0">
+                            <img class=" css-StyledLazyLoadingImage ezcopuc0"
+                                 src="../static/{{detail.id}}.jpg">
                         </div>
+                        <br><br><br><br>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="css-Pane e1svyhwg15">
-            <div class="css-569z5v">
-                <div class="css-1po9d5k">
-                    <div class="css-1d6udxb">
-                        <div class="css-PaneInner e1svyhwg16">
-                            <h1 class="css-Title">{{detail.title}}</h1>
-                            <div>
-                                <hr class="animated-width">
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <hr style="opacity: 50%; display: inline-block;">
-    <style>
-    </style>
-    <div class="container_bg">
-        <div class="description">
-            {{detail.desc}}
-        </div>
-        <br>
-
-        {% if user != None %}
-        <div class="review">
-            <div class="review--input">
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4" id="input-id">
-                            {{user}}
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <input type="text" id="input-text">
-                                <button onclick="submitReview()">저장!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-            <div class="review--show" id="review-show">
-                {% for review in reviews %}
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            {{review.userId}}
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{review.text}}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-
-                {% endblock %}
-            </div>
-        </div>
-        </section>
     </div>
 
+    <div class="css-Pane e1svyhwg15">
+        <div class="css-569z5v">
+            <div class="css-1po9d5k">
+                <div class="css-1d6udxb">
+                    <div class="css-PaneInner e1svyhwg16">
+                        <h1 class="css-Title">{{detail.title}}</h1>
+                        <div>
+                            <hr class="animated-width">
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr style="opacity: 50%; display: inline-block;">
+<style>
+</style>
+<div class="container_bg">
+    <div class="description">
+        {{detail.desc}}
+    </div>
+    <br>
 
+    {% if user != None %}
+    <div class="review">
+        <div class="review--input">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4" id="input-id">
+                        {{user}}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <input type="text" id="input-text">
+                            <button onclick="submitReview()">저장!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="review--show" id="review-show">
+            {% for review in reviews %}
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        {{review.userId}}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{review.text}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            {% endblock %}
+        </div>
+    </div>
+    </section>
+</div>
 </body>
 </html>
