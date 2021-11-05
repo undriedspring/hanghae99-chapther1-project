@@ -3,6 +3,7 @@
 문화로는 뮤지컬 산업에 대한 애정을 바탕으로 커뮤니티의 증대를 위해 각종 뮤지컬에 대한 정보를 제공합니다.
 
 <hr>
+<br>
 
 ## 와이어 프레임
 
@@ -10,14 +11,17 @@
 https://ovenapp.io/view/LOQUfroHiJEaz5RXfAEHMp6d4e6ectIb/
 
 <hr>
+<br>
 
 ## 웹사이트 링크
 http://taesukang.shop/
 
 <hr>
+<br>
 
 ## 데모영상 유튜브 링크
 <hr>
+<br>
 
 ## API
 
@@ -28,7 +32,9 @@ http://taesukang.shop/
 | 게시물 리스트(메인)   | get  | / | --                             | 전체 게시글 |
 | 뮤지컬 세부 정보 | get | /details | { { id: id } } | 세부 게시글 정보 |
 | 마이페이지(후기)      | get | /myPage    | { token: mytoken }                     | 내가 작성한 리뷰 목록 |
+
 <hr>
+<br>
 
 ## 직면한 문제와 해결 방안
 <details>
