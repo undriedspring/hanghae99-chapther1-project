@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>문화로 - 상세페이지</title>
+    <title>문화로</title>
     <style>
         body {
             margin: 0;
@@ -19,43 +19,61 @@
             const user = '{{user}}'
             const post = '{{detail.id}}'
             const text = $('#input-text').val()
-            if(text.trim() === ''){
+            if (text.trim() === '') {
                 alert('내용을 작성해주세요!')
                 window.location.reload()
-            }else{
+            } else {
                 $.ajax({
-                type: 'post',
-                url: '/api/review',
-                data: {post_id: post, user_id: user, text_give: text},
-                success: function (res) {
-                    if (res.payload === 'success') {
-                        alert('저장이 완료되었습니다.')
-                        window.location.reload()
+                    type: 'post',
+                    url: '/api/review',
+                    data: {post_id: post, user_id: user, text_give: text},
+                    success: function (res) {
+                        if (res.payload === 'success') {
+                            alert('저장이 완료되었습니다.')
+                            window.location.reload()
+                        }
                     }
-                }
                 })
             }
 
         }
-        window.addEventListener('DOMContentLoaded', function (){
+
+        window.addEventListener('DOMContentLoaded', function () {
             const back = document.querySelector('#backimg')
             back.style.backgroundImage = `url('../static/{{detail.id}}_wide.jpg')`
             back.style.position = 'absolute'
-            back.style.top='-10%'
-            back.style.left='-10%'
-            back.style.width='120%'
-            back.style.height='110%'
+            back.style.top = '-10%'
+            back.style.left = '-10%'
+            back.style.width = '120%'
+            back.style.height = '110%'
             back.style.filter = 'blur(15px);'
             back.style.backgroundSize = 'cover'
         })
     </script>
+    <style>
+        /*@media (min-width: 1400px) {*/
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
 </head>
 
 
 <body>
 {% extends "layout.html" %}
 {% block content %}
+<!-- 상단 이미지 컨텐츠-->
 <section class="header-image">
+    <!-- 와이드 이미지 -->
     <div class="css-cshjoi-PosterContainer e1svyhwg1">
         <div class="css-BlurPosterBlock e1svyhwg2">
             <div color="#B8B8B8" class="css-LeftBackground e1svyhwg6"></div>
@@ -66,6 +84,7 @@
             <div color="#D7AD7C" class="css-RightBackground e1svyhwg7"></div>
             <div class="css-DimmedLayer e1svyhwg3"></div>
         </div>
+        <!-- 정보 -->
         <div class="css-569z5v">
             <div class="css-1po9d5k">
                 <div class="css-1d6udxb">
@@ -97,22 +116,24 @@
         </div>
     </div>
 </section>
-<hr style="opacity: 50%; display: inline-block;">
-<style>
-</style>
+<!-- //상단 이미지 컨텐츠-->
+<!--하단 컨텐츠 내용-->
 <div class="container_bg">
+    <!--설명-->
     <div class="description">
         {{detail.desc}}
     </div>
-    <br>
 
+    <!-- review   -->
     {% if user != None %}
     <div class="review">
+        <!-- 리뷰 작성-->
         <div class="review--input">
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4" id="input-id">
-                        {{user}}
+                        <!-- {{user}}-->
+                        <p>리뷰쓰기</p>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -124,7 +145,7 @@
             </div>
         </div>
         {% endif %}
-
+        <!--  리뷰 리스트  -->
         <div class="review--show" id="review-show">
             {% for review in reviews %}
             <div class="card mb-3">
@@ -140,11 +161,11 @@
                 </div>
             </div>
             {% endfor %}
-
-            {% endblock %}
         </div>
     </div>
     </section>
 </div>
+<!--//하단 컨텐츠 내용-->
+{% endblock %}
 </body>
 </html>
