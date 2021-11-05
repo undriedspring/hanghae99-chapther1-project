@@ -50,24 +50,7 @@
             back.style.backgroundSize = 'cover'
         })
     </script>
-    <style>
-        /*@media (min-width: 1400px) {*/
-
-
-
-
-
-
-
-
-
-
-
-
-    </style>
 </head>
-
-
 <body>
 {% extends "layout.html" %}
 {% block content %}
@@ -125,8 +108,9 @@
     </div>
 
     <!-- review   -->
-    {% if user != None %}
+
     <div class="review">
+        {% if user != None %}
         <!-- 리뷰 작성-->
         <div class="review--input">
             <div class="card mb-3">

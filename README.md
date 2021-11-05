@@ -28,7 +28,7 @@
 ## 와이어 프레임
 
 카카오 오븐 url :
-https://ovenapp.io/view/LOQUfroHiJEaz5RXfAEHMp6d4e6ectIb/
+https://www.figma.com/file/rCwFAnc5rSwEmAPZMy2mrP/%ED%95%AD%ED%95%B499?node-id=0%3A1
 
 <br>
 
@@ -70,6 +70,8 @@ http://taesukang.shop/
   <div markdown="1">메인페이지 작업중 페이지 이동시 공통된 레이아웃 요소들을 표현할수 있는 방법을 고민하던 중 
 flask Template Inheritance을 참고하여 레이아웃을 구조화 하였다. </div>
 </details>
+
+<br>
 
 ## 궁금한 점
 - 변수명, 클래스명, 메소드명 등의 표기 방식
