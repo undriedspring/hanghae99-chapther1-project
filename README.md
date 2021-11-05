@@ -5,6 +5,24 @@
 <br>
 <br>
 
+## 제작 기간 & 팀원 소개
+- 2021년 9월 1월 5일
+- 4인 1조 팀 프로젝트
+-- 강태수 
+-- 이한샘 : https://github.com/undriedspring
+-- 최수인 : https://github.com/whl5105
+-- 이주형 : https://github.com/leejh4197
+
+## 사용 기술
+- python
+- Flask
+- MongoDB
+- JQuery
+- Bootstrap
+- Bulma
+- AWS EC2
+
+
 ## 와이어 프레임
 
 카카오 오븐 url :
