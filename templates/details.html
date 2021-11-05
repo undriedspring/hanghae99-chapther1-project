@@ -9,7 +9,6 @@
         body {
             margin: 0;
         }
-
     </style>
 
     <link rel="stylesheet" href="../static/styles/reset.css">
@@ -56,7 +55,7 @@
                         <div class="css-PosterWithRankingInfoBlock e1svyhwg10">
                             <div class=" css-StyledLazyLoadingImage ezcopuc0">
                                 <img class=" css-StyledLazyLoadingImage ezcopuc0"
-                                     src="../static/{{detail.id}}.jpg">
+                                     src="../static/{{detail.id}}.jpg" alt="">
                             </div>
                             <br><br><br><br>
                         </div>
@@ -81,7 +80,7 @@
             </div>
         </div>
     </section>
-    <hr style="opacity: 50%; display: inline-block;">
+   <br><br>
     <style>
     </style>
     <div class="container_bg">
@@ -100,7 +99,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <input type="text" id="input-text">
+                                <label for="input-text"></label><input type="text" id="input-text">
                                 <button onclick="submitReview()">저장!</button>
                             </div>
                         </div>
@@ -128,7 +127,6 @@
                 {% endblock %}
             </div>
         </div>
-        </section>
     </div>
 
 

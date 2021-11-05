@@ -73,10 +73,11 @@
 }
 
 .css-LeftBackground {
+
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background: #B8B8B8;
+    background: #e3e3e3;
 }
 
 .css-BlurPoster {
@@ -131,7 +132,7 @@
         top: 0;
         bottom: 0;
         left: 0;
-        background-image: linear-gradient(-90deg, rgba(184, 184, 184, 0) 0%, #B8B8B8 100%);
+        background-image: linear-gradient(-90deg, rgba(184, 184, 184, 0) 0%, #e3e3e3 100%);
         width: 100px;
     }
 }
@@ -158,6 +159,7 @@
     display: none;
 }
 
+
 @media (min-width: 719px) {
     .css-RightGradient {
         display: block;
@@ -165,7 +167,7 @@
         top: 0;
         right: 0;
         bottom: 0;
-        background-image: linear-gradient(90deg, rgba(215, 173, 124, 0) 0%, #D7AD7C 100%);
+        background-image: linear-gradient(90deg, rgba(215, 173, 124, 0) 0%, #3b3b3b 100%);
         width: 100px;
     }
 }
@@ -180,7 +182,7 @@
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background: #D7AD7C;
+    background: #3b3b3b;
 }
 
 .css-DimmedLayer {
@@ -264,29 +266,42 @@
     position: relative;
     overflow: hidden;
     display: block;
-    position: relative;
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
     box-sizing: border-box;
-    width: 80px;
-    height: 117px;
+    width: 50px;
+    height: 72px;
     border: solid 1px #fff;
-    border-radius: 2px;
+    border-radius: 3px;
     background: #f8f8f8;
     -webkit-transition: 300ms;
     transition: 300ms;
 }
 
+@media (max-width: 718px) {
+    .css-StyledLazyLoadingImage {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 50px;
+        height: 72px;
+        border-radius: 3px;
+        border-width: 0.5px;
+        box-shadow: 2.5px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
 @media (min-width: 719px) {
     .css-StyledLazyLoadingImage {
         position: absolute;
-        top: -3px;
-        left: -4px;
-        width: 153px;
-        height: 221px;
+        top: 0px;
+        left: 0px;
+        width: 166px;
+        height: 238px;
+        border-radius: 3px;
         border-width: 1px;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 4.5px 4px 0px 0px rgba(0, 0, 0, 0.25);
     }
 }
 
@@ -314,6 +329,39 @@
     transition: opacity 420ms;
 }
 
+@media (max-width: 718px) {
+    .ezcopuc0 {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 110px;
+        height: 158px;
+        border-radius: 3px;
+        border-width: 0.5px;
+        box-shadow: 2.5px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media (min-width: 719px) {
+    .ezcopuc0 {
+        top: 0px;
+        left: 0px;
+        width: 150px;
+        height: 215px;
+        border-radius: 3px;
+        border-width: 1px;
+        box-shadow: 4.5px 4px 0px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@media (min-width: 1023px) {
+    .ezcopuc0 {
+        width: 166px;
+        height: 238px;
+    }
+}
+
+
 .css-Pane {
     text-align: center;
     padding: 0 15px 0;
@@ -334,7 +382,7 @@
 @media (min-width: 719px) {
     .css-PaneInner {
         text-align: left;
-        margin: 0 0 0 173px;
+        margin: 0 0 0 180px;
     }
 }
 
@@ -345,8 +393,8 @@
 }
 
 .css-Title {
-    display: none;
-    font-size: 25px;
+    display: block;
+    font-size: 40px;
     font-weight: 700;
     -webkit-letter-spacing: -0.9px;
     -moz-letter-spacing: -0.9px;
@@ -354,115 +402,132 @@
     letter-spacing: -0.9px;
     line-height: 30px;
     margin-top: 10px;
-}
+    font-family: 'Do Hyeon', sans-serif;
 
-@media (min-width: 719px) {
+    }
+
+
+@media (max-width: 718px) {
     .css-Title {
         display: block;
-        width: 520px;
-    }
-
-    .css-Title {
-        font-family: 'Do Hyeon', sans-serif;
-        font-size: 45px;
-    }
-}
-
-
-@media (min-width: 1023px) {
-    .css-Title {
-        font-size: 33px;
-        font-weight: 700;
-        -webkit-letter-spacing: -1.2px;
-        -moz-letter-spacing: -1.2px;
-        -ms-letter-spacing: -1.2px;
-        letter-spacing: -1.2px;
-        line-height: 40px;
-    }
-
-    .css-Title {
-        font-family: 'Do Hyeon', sans-serif;
-        font-size: 45px;
-    }
-
-}
-
-@-webkit-keyframes animated-width {
-    from {
-        width: 100%;
-    }
-    to {
-        width: 90%;
+        position: absolute;
+        font-size: 30px;
+        top: 220px;
+        left: 180px;
+        color: whitesmoke;
+        -webkit-text-stroke: 0.2px #000;
+        text-shadow: 3px 2px 1px gray;
     }
 }
-
-hr.animated-width {
-    height: 2px;
-    border: 5px;
-    opacity: 70%;
-    text-align: center;
-    background-color: #c7c7c7;
-    -webkit-animation-name: animated-width;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    -webkit-animation-duration: .5s;
-    -webkit-animation-timing-function: ease-out;
-}
-
-.star_text {
-    font-family: 'Noto Serif KR', serif;
-    margin: 0px 55px 0px;
-    opacity: 40%;
-}
-
-.star-rating {
-    border: solid 0px #ccc;
-    display: flex;
-    flex-direction: row-reverse;
-    font-size: 2em;
-    justify-content: space-around;
-    padding: 0 .2em;
-    text-align: center;
-    width: 5em;
-}
-
-.star-rating input {
-    display: none;
-}
-
-.star-rating label {
-    color: #ccc;
-    cursor: pointer;
-}
-
-.star-rating :checked ~ label {
-    color: #fffb5e;
-}
+    @media (min-width: 719px) {
+        .css-Title {
+            display: block;
+            width: 520px;
+            font-size: 45px;
+            padding-left: 20px;
+        }
+    }
 
 
-body {
-    box-sizing: border-box;
-}
+    @media (min-width: 1023px) {
+        .css-Title {
+            display: block;
+            font-size: 55px;
+            font-weight: 700;
+            -webkit-letter-spacing: -1.2px;
+            -moz-letter-spacing: -1.2px;
+            -ms-letter-spacing: -1.2px;
+            letter-spacing: -1.2px;
+            line-height: 40px;
+            -webkit-transition: opacity 420ms;
+            transition: opacity 420ms;
+        }
+    }
 
-img {
-    max-width: 100%;
-}
+    @-webkit-keyframes animated-width {
+        from {
+            width: 100%;
+        }
+        to {
+            width: 90%;
+        }
+    }
 
-.container_bg {
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.05);
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    hr.animated-width {
+        height: 2px;
+        border: 5px;
+        opacity: 70%;
+        text-align: center;
+        background-color: #c7c7c7;
+        -webkit-animation-name: animated-width;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-duration: .5s;
+        -webkit-animation-timing-function: ease-out;
+    }
 
-}
+    @media (max-width: 718px) {
+        .animated-width {
+            display: none;
+        }
 
-.description {
-    margin-top: 50px;
-    padding: 50px;
-    text-align: center;
-}
+    }
 
-.detail__review {
-    width: 500px;
+    /*별점주기*/
+    /*.star_text {*/
+    /*    font-family: 'Noto Serif KR', serif;*/
+    /*    margin: 0px 55px 0px;*/
+    /*    opacity: 40%;*/
+    /*}*/
+    /*.star-rating {*/
+    /*    border: solid 0px #ccc;*/
+    /*    display: flex;*/
+    /*    flex-direction: row-reverse;*/
+    /*    font-size: 2em;*/
+    /*    justify-content: space-around;*/
+    /*    padding: 0 .2em;*/
+    /*    text-align: center;*/
+    /*    width: 5em;*/
+    /*}*/
+    /*.star-rating input {*/
+    /*    display: none;*/
+    /*}*/
+    /*.star-rating label {*/
+    /*    color: #ccc;*/
+    /*    cursor: pointer;*/
+    /*}*/
+    /*.star-rating :checked ~ label {*/
+    /*    color: #fffb5e;*/
+    /*}*/
+    body {
+        box-sizing: border-box;
+    }
 
+    img {
+        max-width: 100%;
+    }
+
+    .container_bg {
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.05);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .description {
+        margin-top: 50px;
+        padding: 50px;
+        text-align: center;
+        text-indent: 1em;
+    }
+
+    .detail__review {
+        width: 500px;
+
+    }
+
+    .review {
+        position: relative;
+        top: 100px;
+    }
 }
