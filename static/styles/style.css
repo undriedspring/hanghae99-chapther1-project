@@ -365,7 +365,7 @@
 
 .css-Pane {
     text-align: center;
-    padding: 0 15px 0;
+     padding: 44px 16px 32px;
 }
 
 @media (min-width: 719px) {
@@ -516,10 +516,11 @@
     }
 
     .description {
-        margin-top: 50px;
-        padding: 50px;
+        /*padding: 50px;*/
         text-align: center;
         text-indent: 1em;
+        max-width: 1320px;
+        margin: 50px auto 50px auto;
     }
 
     .detail__review {
@@ -530,5 +531,26 @@
     .review {
         position: relative;
         top: 100px;
+        max-width: 920px;
+        margin: auto;
     }
-}
+    /*리뷰 박스 크기 조정 */
+    .review .card {
+            padding: 15px 0;
+            text-align: center;
+    }
+
+    /* 기본 인풋 padding 값 지웠습니다.*/
+    .review .card-body {
+                padding: 0;
+    }
+    .card-body input{
+        width: 200px;
+        padding: 4px;
+    }
+    .card-body button{
+        background-color: coral;
+        color: white;
+        padding: 5px 8px;
+        border-radius: 5px;
+    }

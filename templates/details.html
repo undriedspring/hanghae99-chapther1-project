@@ -19,40 +19,51 @@
             const user = '{{user}}'
             const post = '{{detail.id}}'
             const text = $('#input-text').val()
-            if(text.trim() === ''){
+            if (text.trim() === '') {
                 alert('내용을 작성해주세요!')
                 window.location.reload()
-            }else{
+            } else {
                 $.ajax({
-                type: 'post',
-                url: '/api/review',
-                data: {post_id: post, user_id: user, text_give: text},
-                success: function (res) {
-                    if (res.payload === 'success') {
-                        alert('저장이 완료되었습니다.')
-                        window.location.reload()
+                    type: 'post',
+                    url: '/api/review',
+                    data: {post_id: post, user_id: user, text_give: text},
+                    success: function (res) {
+                        if (res.payload === 'success') {
+                            alert('저장이 완료되었습니다.')
+                            window.location.reload()
+                        }
                     }
-                }
                 })
             }
 
         }
-        window.addEventListener('DOMContentLoaded', function (){
+
+        window.addEventListener('DOMContentLoaded', function () {
             const back = document.querySelector('#backimg')
             back.style.backgroundImage = `url('../static/{{detail.id}}_wide.jpg')`
             back.style.position = 'absolute'
-            back.style.top='-10%'
-            back.style.left='-10%'
-            back.style.width='120%'
-            back.style.height='110%'
+            back.style.top = '-10%'
+            back.style.left = '-10%'
+            back.style.width = '120%'
+            back.style.height = '110%'
             back.style.filter = 'blur(15px);'
             back.style.backgroundSize = 'cover'
         })
     </script>
     <style>
-        .description{
-            width: ;
-        }
+        /*@media (min-width: 1400px) {*/
+
+
+
+
+
+
+
+
+
+
+
+
     </style>
 </head>
 
@@ -105,19 +116,24 @@
         </div>
     </div>
 </section>
+<!-- //상단 이미지 컨텐츠-->
+<!--하단 컨텐츠 내용-->
 <div class="container_bg">
+    <!--설명-->
     <div class="description">
         {{detail.desc}}
     </div>
-    <br>
-    <!-- 리뷰   -->
+
+    <!-- review   -->
     {% if user != None %}
     <div class="review">
-<!--        <div class="review&#45;&#45;input">-->
+        <!-- 리뷰 작성-->
+        <div class="review--input">
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4" id="input-id">
-                        {{user}}
+                        <!-- {{user}}-->
+                        <p>리뷰쓰기</p>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -126,10 +142,10 @@
                         </div>
                     </div>
                 </div>
-<!--            </div>-->
+            </div>
         </div>
         {% endif %}
-
+        <!--  리뷰 리스트  -->
         <div class="review--show" id="review-show">
             {% for review in reviews %}
             <div class="card mb-3">
@@ -149,6 +165,7 @@
     </div>
     </section>
 </div>
+<!--//하단 컨텐츠 내용-->
 {% endblock %}
 </body>
 </html>
