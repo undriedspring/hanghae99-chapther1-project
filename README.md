@@ -13,6 +13,9 @@
   - 최수인 : https://github.com/whl5105
   - 이주형 : https://github.com/leejh4197
 
+<br>
+<br>
+
 ## 사용 기술
 - python
 - Flask
