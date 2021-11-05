@@ -39,3 +39,7 @@ http://taesukang.shop/
   <summary>Collection join 관련</summary>  
   <div markdown="1"> 이번 프로젝트를 통해 Nosql 은 처음 접해보았는데, Collection 간에 join 관련하여 lookup이라는 기능을 사용할 수 있다는 것을 찾았지만, 권장하지 않는다는 말이 지배적이라 Computed 패턴을 사용하였다. </div>
 </details>
+<details>
+  <summary> template language 인덱싱 관련</summary>  
+  <div markdown="1"> 데이터를 사용하면서 indexing 해야할 일이 생겼는데, template language 중 loop.index0을 활용하였다. </div>
+</details>
