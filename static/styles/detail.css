@@ -15,18 +15,18 @@
 /*}*/
 
 /*!*헤더 로고영역*!*/
-/*!*.navbar {*!*/
-/*!*    font-family: "SEBANG_Gothic_Bold";*!*/
-/*!*    display: flex;*!*/
-/*!*    justify-content: space-between;*!*/
-/*!*    align-items: flex-start;*!*/
-/*!*    padding: 5px;*!*/
-/*!*    height: 50px;*!*/
-/*!*    text-transform: uppercase;*!*/
-/*!*    color: var(--black);*!*/
-/*!*    width: 350px;*!*/
-/*!*    margin: 0 auto;*!*/
-/*!*}*!*/
+/*.navbar {*/
+/*    font-family: "SEBANG_Gothic_Bold";*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: flex-start;*/
+/*    padding: 5px;*/
+/*    height: 50px;*/
+/*    text-transform: uppercase;*/
+/*    color: var(--black);*/
+/*    width: 350px;*/
+/*    margin: 0 auto;*/
+/*}*/
 
 /*.navbar__logo {*/
 /*    display: flex;*/
