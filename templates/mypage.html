@@ -16,26 +16,17 @@
             margin-top: 50px;
             margin-bottom: 50px;
         }
+        /*.img-fluid.rounded-start{*/
+        /*    height: 100%;*/
+        /*}*/
+        .card-body{
+            display: grid;
+            grid-template-rows: repeat(2, 50px);
+            grid-template-columns: repeat(2, 100px);
+            grid-auto-rows: 100px;
+            text-align: center;
+        }
     </style>
-    <script>
-        $.ajax({
-            type:'GET',
-            data:{},
-            dataType: 'json',
-            url: 'http://api.kcisa.kr/openapi/service/rest/meta10/get20150045?serviceKey=7f6a0411-9138-47fc-ba75-02957cb4bdd9',
-            success: function(res) {
-              const items = res.response.body.items.item
-                for (let i = 0; i <items.length; i ++) {
-                    if(items[i].description === " "){
-                        continue
-                    }else {
-                        console.log(items[i].title)
-                    }
-
-                }
-            }
-          })
-    </script>
 </head>
 <body>
 {% extends 'layout.html'%}
@@ -44,51 +35,28 @@
 <div class="container">
     <div class="header--text">
         <h4>내가 작성한 리뷰</h4>
-    </div>
-    <div class="card mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="..." class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
+        <h4>ID : {{user.userId}}</h4>
     </div>
 
-    <div class="card mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="..." class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    {% for review in reviews %}
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="../static/{{review.postId}}.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <p>ID</p>
+                <p>내용</p>
+              </div>
+                <div class="card-body">
+                    <p class="card-text">{{review.userId}}</p>
+                    <p class="card-text">{{review.text}}</p>
+                </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="card mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="..." class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
 
 
 </div>

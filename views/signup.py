@@ -18,14 +18,14 @@ def sign_up():
     password_receive = request.form['password_give']
     password_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
     doc = {
-        "username": username_receive,  # 아이디
-        "password": password_hash,  # 비밀번호
+        "userId": username_receive,  # 아이디
+        "userPw": password_hash,  # 비밀번호
     }
-    db.users.insert_one(doc)
+    db.forTheCultureUsers.insert_one(doc)
     return jsonify({'result': 'success'})
 
 @signup.route('/sign_up/check_dup', methods=['POST'])
 def check_dup():
     username_receive = request.form['username_give']
-    exists = bool(db.users.find_one({"username": username_receive}))
+    exists = bool(db.forTheCultureUsers.find_one({"userId": username_receive}))
     return jsonify({'result': 'success', 'exists': exists})

@@ -21,47 +21,41 @@
     <!--     Optional JavaScript -->
     <!--     jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"-->
+    <!--            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"-->
+    <!--            crossorigin="anonymous"></script>-->
+    <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"-->
+    <!--            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"-->
+    <!--            crossorigin="anonymous"></script>-->
     <style>
         #content {
             background-color: #f5f5f5;
             padding: 43px 0;
         }
+
         .col {
             background-color: transparent;
             cursor: pointer;
         }
+        .col a{
+            text-decoration: none;
+            color: black;
+        }
+
         #card-text {
             padding: 4px 10px;
         }
+
         .card-img img {
             border-radius: 10px;
         }
-        @media screen and (min-width: 1024px){
-            .container>.navbar .navbar-brand, .navbar>.container .navbar-brand {
-            margin-left: 0;
+
+        @media screen and (min-width: 1024px) {
+            .container > .navbar .navbar-brand, .navbar > .container .navbar-brand {
+                margin-left: 0;
+            }
         }
-        }
 
-
-
-        /*.card{*/
-        /*    cursor: pointer;*/
-        /*    box-shadow: 0 0 20px rgb(0 0 0 / 16%);*/
-        /*}*/
-        /*.card-img{*/
-        /*    overflow: hidden;*/
-        /*}*/
-        /*.card:hover{*/
-        /*    box-shadow: 0 0 20px rgb(0 0 0 / 16%);*/
-        /*}*/
-        /*.card:hover img{*/
-        /*    transition-duration: 0.5s;*/
-        /*    transform: scale(1.1);*/
-        /*}*/
-        /*.card:hover .card-body{*/
-        /*    background-color: #eeeeee;*/
-        /*}*/
     </style>
     <title>문화로</title>
     <script>
@@ -79,22 +73,28 @@
                     for (let i = 0; i < list.length; i++) {
                         let id = list[i]['id']
                         let title = list[i]['title']
+                        let desc = list[i]['desc']
                         let temp_html = `
                             <div class="col" >
-                                <div id="card">
-                                    <div class="card-img">
-                                        <img src="static/${id}.jpg" class="card-img-top" alt="=포스터 이미지" /
+                                <a href="details?id=${id}">
+                                    <div class="card">
+                                        <div class="card-img">
+                                            <img src="static/${id}.jpg" class="card-img-top" alt="=이미지 샘플2" /
+                                        </div>
+                                        <div class="card-body" id="card-text">
+                                            <h5 class="card-title">${title}</h5>
+                                        </div>
                                     </div>
-                                    <div class="card-body" id="card-text">
-                                        <h5 class="card-title">${title}</h5>
-                                    </div>
-                                </div>
-                            </div>`
+                                </a>
+                            </div>
+                        `
                         $('#list').append(temp_html)
                     }
                 }
             })
         }
+
+
     </script>
 </head>
 <body>
@@ -103,9 +103,12 @@
 <div id="content">
     <div class="container">
         <div id="list" class="row row-cols-1 row-cols-md-4 g-4">
+
         </div>
     </div>
+
 </div>
+
 {% endblock %}
 </body>
 </html>

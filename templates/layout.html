@@ -20,17 +20,19 @@
     <title>문화로</title>
     <style>
         /* ---- wrap ---- */
-        #wrap{
+        #wrap {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
+
         /*---- header ----*/
         a.navbar-brand {
             font-family: 'Gugi', cursive;
             font-size: 35px;
             cursor: pointer;
         }
+
         #header {
             width: 100%;
             border-bottom: 2px solid #eee;
@@ -83,13 +85,14 @@
             padding-top: 10px;
             display: inherit;
         }
+
     </style>
     <script>
         window.addEventListener('DOMContentLoaded', function () {
             if (document.cookie.includes('mytoken')) {
                 let temp_html = `
                         <button type="button" class="btn btn-link">
-                            <a href="{{ url_for('mypage.myPage') }}">마이 페이지</a>
+                            <a href="/mypage">마이 페이지</a>
                         </button>
                         <button type="button" class="btn btn-outline-secondary" onclick=delCookie()>로그아웃</button>
                         `
@@ -98,54 +101,58 @@
                 let temp_html = `
                         <button type="button" class="btn btn-outline-secondary">
                             <a href="{{ url_for('login.login') }}">로그인</a>
-                        </button>`
+                        </button>
+
+            `
                 $('#media-flex').append(temp_html)
             }
         })
 
         function delCookie() {
             document.cookie = "mytoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            window.location.replace('/');
+            alert('로그아웃이 완료되었습니다.')
+            window.location.reload()
         }
+
     </script>
 
 </head>
 <body>
-    <div id="wrap">
-        <div id="header">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light ">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="{{ url_for('main.home') }}">문화로</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <form id="media-flex" class="d-flex">
-                                <!-- 뮤지컬 리스트 -->
-                            </form>
-                        </div>
+
+
+<div id="wrap">
+    <div id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{{ url_for('main.home') }}">문화로</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form id="media-flex" class="d-flex">
+                            <!-- 뮤지컬 리스트 -->
+                        </form>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </nav>
         </div>
-        {% block content %}
-        {% endblock %}
-        <footer>
-            <div>
-                <img src="../static/suin.png">
-                <img src="../static/suin.png">
-                <img src="../static/suin.png">
-                <img src="../static/suin.png">
-            </div>
-            <span> Copyright ⓒ hanghae99 4기 chapter1 8조 </span>
-        </footer>
     </div>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div>
+            <img src="../static/suin.png">
+            <img src="../static/suin.png">
+            <img src="../static/suin.png">
+            <img src="../static/suin.png">
         </div>
-
-
+        <span> Copyright ⓒ hanghae99 4기 chapter1 8조 </span>
+    </footer>
+</div>
+</div>
 
 
 </body>
