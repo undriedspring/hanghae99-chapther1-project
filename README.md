@@ -33,7 +33,7 @@ http://taesukang.shop/
 ## 직면한 문제와 해결 방안
 <detail>
   <summary>MVC패턴 사용 시도</summary>  
-  <p> 협업을 위해 app.py를 분할해서 관리하고 싶은 관계로 기왕 하는 김에 MVC패턴을 적용해보고자 알아보았지만, 작업일정 상 기한에 맞추기 어려워 리덕스의 덕스 패턴을 참고하여 flask Blueprint 를 사용하여 페이지 단위 관리를 시행하였다. </p>
+  <div markdown="1"> 협업을 위해 app.py를 분할해서 관리하고 싶은 관계로 기왕 하는 김에 MVC패턴을 적용해보고자 알아보았지만, 작업일정 상 기한에 맞추기 어려워 리덕스의 덕스 패턴을 참고하여 flask Blueprint 를 사용하여 페이지 단위 관리를 시행하였다. </div>
 </detail>
 <detail>
   <summary>Collection join 관련</summary>  
