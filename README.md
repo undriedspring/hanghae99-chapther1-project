@@ -65,3 +65,11 @@ http://taesukang.shop/
   <summary> template language 인덱싱 관련</summary>  
   <div markdown="1">데이터를 사용하면서 indexing 해야할 일이 생겼는데, template language 중 loop.index0을 활용하였다. </div>
 </details>
+<details>
+  <summary> 사이트 레이아웃 관련</summary>  
+  <div markdown="1">메인페이지 작업중 페이지 이동시 공통된 레이아웃 요소들을 표현할수 있는 방법을 고민하던 중 
+flask Template Inheritance을 참고하여 레이아웃을 구조화 하였다. </div>
+</details>
+
+## 궁금한 점
+- 변수명, 클래스명, 메소드명 등의 표기 방식
