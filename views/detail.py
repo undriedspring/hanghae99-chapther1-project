@@ -16,12 +16,16 @@ initDefault = None
 # details
 @detail.route('/details')
 def details():
-    global initDefault
-    initDefault = request.args.get('id')
+
+    # query string 값 받아온다.
+    request.args.get('id')
     try:
         token_reveive = request.cookies.get('mytoken')
-        result = db.forTheCulture.find_one({'id': int(initDefault)}, {'_id': False})
-        review = db.forTheCultureReviews.find({'postId': initDefault}, {'_id': False})
+        # id 값을 통해 세부 정보 불러 옴
+        result = db.forTheCulture.find_one({'id': int(request.args.get('id'))}, {'_id': False})
+        # 세부 정보의 리뷰들을 볼러 옴
+        review = db.forTheCultureReviews.find({'postId': request.args.get('id')}, {'_id': False})
+        # 댓글을 달 유저의 id값을 위해 복호화
         payload = jwt.decode(token_reveive, SECRET_KEY, algorithms=['HS256'])
         return render_template('details.html', detail=result, user=payload['id'], reviews=review)
     except jwt.ExpiredSignatureError:
