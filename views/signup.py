@@ -3,6 +3,7 @@ import hashlib
 from flask import render_template, jsonify, request, Blueprint
 
 client = MongoClient('localhost', 27017)
+# client = MongoClient('mongodb://test:test@localhost', 27017)
 db = client.hanghae99_chapter1
 
 signup = Blueprint('signup', __name__)

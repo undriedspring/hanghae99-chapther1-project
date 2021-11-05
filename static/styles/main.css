@@ -27,10 +27,16 @@ section {
     border-radius: 10px;
     transition: .5s;
 }
-
+.card-body{
+    text-align: center;
+}
 /*카드 제목*/
 #card-text {
-    padding: 10px 10px 0
+    padding: 10px 10px 0;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
 }
 
 h5.card-title {

@@ -5,6 +5,10 @@
     font-family: 'Roboto', sans-serif;
 */
 
+a {
+    text-decoration: none;
+}
+
 /* ---- wrap ---- */
 #wrap {
     display: flex;
@@ -21,7 +25,7 @@
 
 /* logo */
 a.navbar-brand {
-    font-family: 'Gugi', cursive;
+    font-family: 'Gugi', cursive !important;
     font-size: 35px;
     cursor: pointer;
 }
@@ -71,6 +75,7 @@ footer {
     background-color: #fff;
     text-align: center;
     padding: 20px 0;
+    margin-top: auto;
 }
 
 footer img {

@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 SECRET_KEY = 'SPARTA'
 
 client = MongoClient('localhost', 27017)
+# client = MongoClient('mongodb://test:test@localhost', 27017)
 db = client.hanghae99_chapter1
 
 log_in = Blueprint('login', __name__)
