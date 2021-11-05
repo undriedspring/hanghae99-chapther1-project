@@ -48,6 +48,7 @@
             back.style.height = '110%'
             back.style.filter = 'blur(15px);'
             back.style.backgroundSize = 'cover'
+            back.style.backgroundRepeat = 'no-repeat'
         })
     </script>
 </head>
@@ -103,10 +104,11 @@
 <!--하단 컨텐츠 내용-->
 <div class="container_bg">
     <!--설명-->
+    <div class="desc_box">
     <div class="description">
         {{detail.desc}}
     </div>
-
+</div>
     <!-- review   -->
 
     <div class="review">
@@ -117,7 +119,7 @@
                 <div class="row g-0">
                     <div class="col-md-4" id="input-id">
                         <!-- {{user}}-->
-                        <p>리뷰쓰기</p>
+                        <p class="review_desc">리뷰쓰기</p>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
