@@ -1,0 +1,42 @@
+section {
+    padding: 10px 0 20px;
+}
+
+.col {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/*카드박스*/
+#card {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#card:hover .card-img img {
+    transform: scale(1.1);
+}
+
+/*카드 이미지*/
+.card-img {
+    overflow: hidden;
+
+}
+.card-img img {
+    border-radius: 10px;
+    transition: .5s;
+}
+
+/*카드 제목*/
+#card-text {
+    padding: 10px 10px 0
+}
+
+h5.card-title {
+    color: #3d3d3d;
+}
+
+a.card-link {
+    text-decoration: none;
+}
