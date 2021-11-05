@@ -3,7 +3,6 @@
 문화로는 뮤지컬 산업에 대한 애정을 바탕으로 커뮤니티의 증대를 위해 각종 뮤지컬에 대한 정보를 제공합니다.
 
 <br>
-<br>
 
 ## 제작 기간 & 팀원 소개
 - 2021년 9월 1월 5일
@@ -13,7 +12,6 @@
   - 최수인 : https://github.com/whl5105
   - 이주형 : https://github.com/leejh4197
 
-<br>
 <br>
 
 ## 사용 기술
@@ -26,7 +24,6 @@
 - AWS EC2
 
 <br>
-<br>
 
 ## 와이어 프레임
 
@@ -34,16 +31,13 @@
 https://ovenapp.io/view/LOQUfroHiJEaz5RXfAEHMp6d4e6ectIb/
 
 <br>
-<br>
 
 ## 웹사이트 링크
 http://taesukang.shop/
 
 <br>
-<br>
 
 ## 데모영상 유튜브 링크
-<br>
 <br>
 
 ## API
@@ -56,7 +50,6 @@ http://taesukang.shop/
 | 뮤지컬 세부 정보 | get | /details | { { id: id } } | 세부 게시글 정보 |
 | 마이페이지(후기)      | get | /myPage    | { token: mytoken }                     | 내가 작성한 리뷰 목록 |
 
-<br>
 <br>
 
 ## 직면한 문제와 해결 방안
