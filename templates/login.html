@@ -215,7 +215,7 @@
 
 </head>
 <body>
-{% extends 'layout.html' %}
+
 
 {% block content %}
     <section class="hero is-white">
@@ -224,10 +224,10 @@
     </section>
     <section class="section">
         <div class="container">
-            <div class="box" style="max-width: 480px;margin:auto">
+            <div class="box" style="max-width: 390px;margin:auto">
                 <article class="media">
                     <div class="media-content">
-                        <h3>Login</h3>
+                        <h3 ><a href="/">문화로</a></h3>
                         <div class="content">
                             <div class="field has-addons">
                                 <div class="control has-icons-left" style="width:100%">
@@ -263,16 +263,14 @@
                                 </button>
 
                             </nav>
-                            <hr>
-                            <h4 class="mb-3">아직 회원이 아니라면</h4>
 
 
+
+                            <!--<h3>문화로에 처음이신가요?</h3>-->
                             <nav class="level is-mobile">
-
-                                <button
-                                        class="level-item button is-sparta is-outlined"
+                                <button class="button is-sparta is-outlined"
                                         onclick="toggle_sign_up()">
-                                    회원가입하기
+                                    회원가입
                                 </button>
                             </nav>
                         </div>
@@ -295,14 +293,16 @@
                                 </div>
                             </div>
                             <nav class="level is-mobile">
-                                <button
-                                        class="level-item button is-sparta is-outlined"
-                                        onclick="toggle_sign_up()">
-                                    취소
-                                </button>
                                 <button class="level-item button is-sparta" onclick="sign_up()">
                                     회원가입
                                 </button>
+                                <p class="side-text">
+                                    계정이 있으신가요 ?
+                                    <span class="is-sparta is-outlined"
+                                        onclick="toggle_sign_up()">
+                                        로그인
+                                </span>
+                                </p>
 
                             </nav>
                         </div>
@@ -313,6 +313,6 @@
 
         </div>
     </section>
-{% endblock %}
+<!--{% endblock %}-->
 </body>
 </html>
