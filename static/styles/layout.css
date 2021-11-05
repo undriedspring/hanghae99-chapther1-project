@@ -1,0 +1,85 @@
+/*
+    font-family: 'Gugi', cursive;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Roboto', sans-serif;
+*/
+
+/* ---- wrap ---- */
+#wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+/*---- header ----*/
+.navbar {
+    padding: 10px 0;
+}
+
+/* logo */
+a.navbar-brand {
+    font-family: 'Gugi', cursive !important;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/*----header_button----*/
+/* 버튼 all */
+.btn {
+    margin-left: 10px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* 마이페이지 버튼 */
+.btn-link {
+    text-decoration: none;
+}
+
+.btn-link a {
+    color: coral;
+    font-weight: bold;
+}
+
+/* 로그인,회원가입 버튼 */
+.btn.btn-outline-secondary {
+    border-radius: 24px;
+    padding: 6px 21px;
+    /*cursor: pointer;*/
+}
+
+/* 로그인,회원가입 버튼 hover */
+.btn.btn-outline-secondary:hover {
+    background-color: coral;
+    border-color: coral;
+    transition-duration: 0.4s;
+}
+
+.btn.btn-outline-secondary:hover a {
+    color: #fff;
+}
+
+/* ---- footer ---- */
+footer {
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer img {
+    margin: 0 2px;
+}
+
+/* 카피라이트 */
+footer span {
+    font-size: 14px;
+    padding-top: 10px;
+    display: inherit;
+}
